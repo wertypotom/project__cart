@@ -21,8 +21,8 @@ function App() {
             type === 'reset'
               ? 0
               : type === 'add'
-                ? item.amount + 1
-                : item.amount - 1,
+              ? item.amount + 1
+              : item.amount - 1,
         };
       }
 
@@ -32,16 +32,8 @@ function App() {
     setItems(newItems);
   };
 
-  const providerState = React.useMemo(
-    () => ({
-      items,
-      toggleItem,
-    }),
-    [items, toggleItem],
-  );
-
   return (
-    <CartContext.Provider value={providerState}>
+    <CartContext.Provider value={{ toggleItem, items }}>
       <Navbar />
       <Container className="mb-4">
         <Routes>

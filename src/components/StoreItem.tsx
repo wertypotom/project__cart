@@ -12,9 +12,7 @@ type Props = {
   toggleItem: (id: number, type: TItemToggle) => void;
 };
 
-function StoreItem({
-  id, imgUrl, name, price, amount, toggleItem,
-}: Props) {
+function StoreItem({ id, imgUrl, name, price, amount, toggleItem }: Props) {
   return (
     <Card className="h-100">
       <Card.Img
@@ -40,11 +38,7 @@ function StoreItem({
             >
               <div>
                 <Button onClick={() => toggleItem(id, 'remove')}>-</Button>
-                <span className="mx-2">
-                  {amount}
-                  {' '}
-                  in cart
-                </span>
+                <span className="mx-2">{amount} in cart</span>
                 <Button onClick={() => toggleItem(id, 'add')}>+</Button>
               </div>
               <Button

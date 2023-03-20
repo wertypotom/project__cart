@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { TItemToggle, TStoreItems } from '../types/TStoreItems';
-import formatCurrency from '../utilities/currencyFormater';
+import { TItemToggle, TStoreItems } from '../../types/TStoreItems';
+import formatCurrency from '../../utilities/currencyFormater';
 import CartCard from './CartCard';
 
 type Props = {
@@ -22,9 +22,7 @@ function CartPictureContainer({ items, toggleItem }: Props) {
         return null;
       })}
       <div className="align-self-end fw-bold">
-        Total:
-        {' '}
-        {formatCurrency(totalPrice)}
+        Total: {formatCurrency(totalPrice)}
       </div>
     </Container>
   );

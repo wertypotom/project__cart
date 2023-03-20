@@ -9,7 +9,7 @@ import {
 import { NavLink } from 'react-router-dom';
 import CartContext from '../context/cartContext';
 import CartPicture from './CartPicture';
-import CartPictureContainer from './CartPictureContainer';
+import CartPictureContainer from './CartCard/CartPictureContainer';
 
 function Navbar() {
   const { items, toggleItem } = useContext(CartContext);
