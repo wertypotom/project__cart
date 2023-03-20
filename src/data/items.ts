@@ -1,6 +1,4 @@
-import { TStoreItems } from '../types/TStoreItems';
-
-export const storeItems: TStoreItems[] = [
+export default [
   {
     id: 1,
     name: 'Book',

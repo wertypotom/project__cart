@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Navbar as NavbarBS,
   Container,
@@ -7,43 +7,39 @@ import {
   Offcanvas,
 } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { TItemToggle, TStoreItems } from '../types/TStoreItems';
+import CartContext from '../context/cartContext';
 import CartPicture from './CartPicture';
 import CartPictureContainer from './CartPictureContainer';
 
-type Props = {
-  items: TStoreItems[];
-  toggleItem: (id: number, type: TItemToggle) => void;
-};
-
-const Navbar = ({ items, toggleItem }: Props) => {
+function Navbar() {
+  const { items, toggleItem } = useContext(CartContext);
   const [show, setShow] = useState(false);
   const totalItems = items.reduce((r, i) => (r += i.amount), 0);
 
   return (
     <>
-      <NavbarBS sticky='top' className='bg-white shadow-sm mb-3'>
+      <NavbarBS sticky="top" className="bg-white shadow-sm mb-3">
         <Container>
-          <Nav className='me-auto'>
-            <Nav.Link to='/' as={NavLink}>
+          <Nav className="me-auto">
+            <Nav.Link to="/" as={NavLink}>
               Home
             </Nav.Link>
-            <Nav.Link to='/store' as={NavLink}>
+            <Nav.Link to="/store" as={NavLink}>
               Store
             </Nav.Link>
-            <Nav.Link to='/about' as={NavLink}>
+            <Nav.Link to="/about" as={NavLink}>
               About
             </Nav.Link>
           </Nav>
           <Button
             style={{ width: '3rem', height: '3rem', position: 'relative' }}
-            variant='outline-primary'
-            className='rounded-circle'
+            variant="outline-primary"
+            className="rounded-circle"
             onClick={() => setShow(true)}
           >
             <CartPicture />
             <div
-              className='rounded-circle bg-danger d-flex justify-content-center align-items-center'
+              className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
               style={{
                 color: 'white',
                 width: '1.5em',
@@ -58,7 +54,7 @@ const Navbar = ({ items, toggleItem }: Props) => {
           </Button>
         </Container>
       </NavbarBS>
-      <Offcanvas show={show} onHide={() => setShow(false)} placement='end'>
+      <Offcanvas show={show} onHide={() => setShow(false)} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Cart</Offcanvas.Title>
         </Offcanvas.Header>
@@ -68,6 +64,6 @@ const Navbar = ({ items, toggleItem }: Props) => {
       </Offcanvas>
     </>
   );
-};
+}
 
 export default Navbar;
