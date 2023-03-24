@@ -7,12 +7,12 @@ import {
   Offcanvas,
 } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import CartContext from '../context/cartContext';
-import CartPicture from './CartPicture';
-import CartPictureContainer from './CartCard/CartPictureContainer';
+import CartContext from '../../context/cartContext';
+import CartItemsContainer from '../CartCard/CartItemsContainer';
+import CartPicture from '../CartPicture';
 
 function Navbar() {
-  const { items, toggleItem } = useContext(CartContext);
+  const { items } = useContext(CartContext);
   const [show, setShow] = useState(false);
   const totalItems = items.reduce((r, i) => (r += i.amount), 0);
 
@@ -21,13 +21,13 @@ function Navbar() {
       <NavbarBS sticky="top" className="bg-white shadow-sm mb-3">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link to="/" as={NavLink}>
+            <Nav.Link data-testid="link-home" to="/" as={NavLink}>
               Home
             </Nav.Link>
-            <Nav.Link to="/store" as={NavLink}>
+            <Nav.Link data-testid="link-store" to="/store" as={NavLink}>
               Store
             </Nav.Link>
-            <Nav.Link to="/about" as={NavLink}>
+            <Nav.Link data-testid="link-about" to="/about" as={NavLink}>
               About
             </Nav.Link>
           </Nav>
@@ -59,7 +59,7 @@ function Navbar() {
           <Offcanvas.Title>Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <CartPictureContainer items={items} toggleItem={toggleItem} />
+          <CartItemsContainer />
         </Offcanvas.Body>
       </Offcanvas>
     </>

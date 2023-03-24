@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import Home from './pages/Home';
-import About from './pages/About';
-import Store from './pages/Store';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import storeItems from './data/items';
 import { TItemToggle } from './types/TStoreItems';
 import CartContext from './context/cartContext';
+import AppRouter from './components/AppRouter/AppRouter';
 
 function App() {
   const [items, setItems] = useState(storeItems);
@@ -36,13 +33,7 @@ function App() {
     <CartContext.Provider value={{ toggleItem, items }}>
       <Navbar />
       <Container className="mb-4">
-        <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="store" element={<Store />} />
-            <Route path="about" element={<About />} />
-          </Route>
-        </Routes>
+        <AppRouter />
       </Container>
     </CartContext.Provider>
   );

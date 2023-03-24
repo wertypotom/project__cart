@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { TItemToggle } from '../types/TStoreItems';
-import formatCurrency from '../utilities/currencyFormater';
+import cartContext from '../../context/cartContext';
+import formatCurrency from '../../utilities/currencyFormater';
 
 type Props = {
   id: number;
@@ -9,10 +9,11 @@ type Props = {
   imgUrl: string;
   price: number;
   amount: number;
-  toggleItem: (id: number, type: TItemToggle) => void;
 };
 
-function StoreItem({ id, imgUrl, name, price, amount, toggleItem }: Props) {
+function StoreItem({ id, imgUrl, name, price, amount }: Props) {
+  const { toggleItem } = useContext(cartContext);
+
   return (
     <Card className="h-100">
       <Card.Img
@@ -28,11 +29,16 @@ function StoreItem({ id, imgUrl, name, price, amount, toggleItem }: Props) {
         </Card.Title>
         <div className="mt-auto">
           {amount === 0 ? (
-            <Button className="w-100" onClick={() => toggleItem(id, 'add')}>
+            <Button
+              data-testid="add-to-cart"
+              className="w-100"
+              onClick={() => toggleItem(id, 'add')}
+            >
               Add to Cart
             </Button>
           ) : (
             <div
+              data-testid="toggle-btns"
               className="d-flex align-items-center flex-column"
               style={{ gap: '0.5rem' }}
             >

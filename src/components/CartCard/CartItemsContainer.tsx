@@ -1,22 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
-import { TItemToggle, TStoreItems } from '../../types/TStoreItems';
+import cartContext from '../../context/cartContext';
 import formatCurrency from '../../utilities/currencyFormater';
 import CartCard from './CartCard';
 
-type Props = {
-  items: TStoreItems[];
-  toggleItem: (id: number, type: TItemToggle) => void;
-};
-
-function CartPictureContainer({ items, toggleItem }: Props) {
+function CartItemsContainer() {
+  const { items } = useContext(cartContext);
   const totalPrice = items.reduce((r, i) => (r += i.amount * i.price), 0);
 
   return (
     <Container className="d-flex flex-column gap-2">
       {items.map((item) => {
         if (item.amount) {
-          return <CartCard key={item.id} item={item} toggleItem={toggleItem} />;
+          return <CartCard key={item.id} item={item} />;
         }
 
         return null;
@@ -28,4 +24,4 @@ function CartPictureContainer({ items, toggleItem }: Props) {
   );
 }
 
-export default CartPictureContainer;
+export default CartItemsContainer;

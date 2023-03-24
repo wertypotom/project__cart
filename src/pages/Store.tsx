@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import StoreItem from '../components/StoreItem';
+import StoreItem from '../components/StoreItem/StoreItem';
 import CartContext from '../context/cartContext';
 
 function Store() {
-  const { items, toggleItem } = useContext(CartContext);
+  const { items } = useContext(CartContext);
 
   return (
     <>
-      <h1>Store</h1>
+      <h1>Store page</h1>
       <Row md={2} xs={1} lg={3} className="g-3">
         {items.map((item) => (
           <Col key={item.id}>
@@ -18,7 +18,6 @@ function Store() {
               imgUrl={item.imgUrl}
               price={item.price}
               amount={item.amount}
-              toggleItem={toggleItem}
             />
           </Col>
         ))}

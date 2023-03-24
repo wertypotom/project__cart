@@ -1,0 +1,188 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Testind Navbar Component > Should correctly render Navbar 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="bg-white shadow-sm mb-3 navbar navbar-expand navbar-light sticky-top"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="me-auto navbar-nav"
+          >
+            <a
+              aria-current="page"
+              class="nav-link active"
+              data-testid="link-home"
+              href="/"
+            >
+              Home
+            </a>
+            <a
+              class="nav-link"
+              data-testid="link-store"
+              href="/store"
+            >
+              Store
+            </a>
+            <a
+              class="nav-link"
+              data-testid="link-about"
+              href="/about"
+            >
+              About
+            </a>
+          </div>
+          <button
+            class="rounded-circle btn btn-outline-primary"
+            style="width: 3rem; height: 3rem; position: relative;"
+            type="button"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div
+              class="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+              style="color: white; width: 1.5em; height: 1.5em; position: absolute; bottom: -5px; right: -10px;"
+            >
+              0
+            </div>
+          </button>
+        </div>
+      </nav>
+      <div>
+        Home page
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="bg-white shadow-sm mb-3 navbar navbar-expand navbar-light sticky-top"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="me-auto navbar-nav"
+        >
+          <a
+            aria-current="page"
+            class="nav-link active"
+            data-testid="link-home"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="nav-link"
+            data-testid="link-store"
+            href="/store"
+          >
+            Store
+          </a>
+          <a
+            class="nav-link"
+            data-testid="link-about"
+            href="/about"
+          >
+            About
+          </a>
+        </div>
+        <button
+          class="rounded-circle btn btn-outline-primary"
+          style="width: 3rem; height: 3rem; position: relative;"
+          type="button"
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <div
+            class="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+            style="color: white; width: 1.5em; height: 1.5em; position: absolute; bottom: -5px; right: -10px;"
+          >
+            0
+          </div>
+        </button>
+      </div>
+    </nav>
+    <div>
+      Home page
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

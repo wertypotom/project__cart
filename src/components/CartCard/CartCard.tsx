@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { TItemToggle, TStoreItems } from '../../types/TStoreItems';
+import cartContext from '../../context/cartContext';
+import { TStoreItems } from '../../types/TStoreItems';
 import formatCurrency from '../../utilities/currencyFormater';
 
 type Props = {
   item: TStoreItems;
-  toggleItem: (id: number, type: TItemToggle) => void;
 };
 
-function CartCard({ item, toggleItem }: Props) {
+function CartCard({ item }: Props) {
+  const { toggleItem } = useContext(cartContext);
   const totalItems = item.amount * item.price;
 
   return (
